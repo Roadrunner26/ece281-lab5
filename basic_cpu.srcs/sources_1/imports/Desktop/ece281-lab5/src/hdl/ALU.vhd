@@ -55,7 +55,7 @@ architecture behavioral of ALU is
     component shifter is
         port(
             i_A: in std_logic_vector(7 downto 0);
-            i_B: in std_logic_vector(7 downto 0);
+            i_B: in std_logic_vector(2 downto 0);
             i_LorR: in std_logic;
             o_result: out std_logic_vector(7 downto 0)
         );
@@ -113,8 +113,9 @@ begin
     shifter_inst: shifter
     port map(
         i_A => i_A,
-        i_B => i_B,
-        i_LorR => i_op(2)
+        i_B => i_B(2 downto 0),
+        i_LorR => i_op(2),
+        o_result => w_shift
     );
     TWOMUX_inst: TWOMUX
     port map(
@@ -132,16 +133,20 @@ begin
         o_result => w_math_result
     );
     
-    w_carry <= (i_op(1) and i_op(0)) and w_Cout;
+    w_carry <= (i_A(7) xor w_result(7)) or (i_B(7) xor w_result(7));
     w_flags(0) <= w_carry;
     w_flags(1) <= w_zero;
     w_flags(2) <= w_neg;
     
     o_flags <= w_flags;
     o_result <= w_result;
-    w_zero <= (not w_result(6)) and (not w_result(5)) and (not w_result(4)) and (not w_result(3)) and (not w_result(2)) and (not w_result(1)) and (not w_result(0));
+    w_zero <= (not w_result(6)) and (not w_result(5)) and (not w_result(4)) and
+              (not w_result(3)) and (not w_result(2)) and (not w_result(1)) and 
+              (not w_result(0));
     w_neg <= w_result(7);
     w_subtract <= not i_B;
+    w_and <= i_A and i_B;
+    w_or <= i_A or i_B;
     
     
     

@@ -188,7 +188,7 @@ begin
         i_D0 => w_regA,
         i_D1 => w_regB,
         i_D2 => w_result,
-        i_D3 => "11111111",
+        i_D3 => "00000000",
         i_sel => w_clk,
         o_result => w_sel
     );

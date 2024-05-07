@@ -21,6 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -34,7 +35,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity shifter is
 port(
     i_A: in std_logic_vector(7 downto 0);
-    i_B: in std_logic_vector(7 downto 0);
+    i_B: in std_logic_vector(2 downto 0);
     i_LorR: in std_logic;
     o_result: out std_logic_vector(7 downto 0)
 );
@@ -45,9 +46,9 @@ begin
     process(i_A, i_B, i_LorR)
     begin
         if i_LorR = '1' then -- Left shift
-            o_result <= i_A(6 downto 0) & '0';
+            o_result <= std_logic_vector(shift_left(unsigned(i_A), to_integer(unsigned(i_B(2 downto 0)))));
         else -- Right shift
-            o_result <= '0' & i_A(7 downto 1);
+            o_result <= std_logic_vector(shift_right(unsigned(i_A), to_integer(unsigned(i_B(2 downto 0)))));
         end if;
     end process;
 end architecture Behavioral;

@@ -36,12 +36,17 @@ end entity adder;
 architecture Behavioral of adder is
     signal sum   : std_logic_vector(8 downto 0);
     signal carry : std_logic;
+    signal r_add1, r_add2 : signed(8 downto 0);
+    signal r_Cin : signed(8 downto 0) := "000000000";
 begin
     -- Convert inputs to signed for arithmetic operations
-    sum <= std_logic_vector(signed('0' & i_A) + 
-           signed('0' & i_B) + 
-           signed(i_Cin & '0' & std_logic_vector(to_unsigned(0,7))));
-
+    r_add1 <= resize(signed(i_A), 9);
+    r_add2 <= resize(signed(i_B), 9);
+    r_Cin(0) <= i_Cin;
+            
+   sum <= std_logic_vector(r_add1 + r_add2 + r_Cin);
+           
+          
     -- Output carry
     o_Cout <= sum(8);
     -- Detect overflow
