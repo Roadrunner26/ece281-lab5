@@ -18,7 +18,7 @@
 !src/**/*.xdc
 !src/**/*.bd
 !src/**/*.bit
-
+!basic_cpu.srcs/
 # or configuration files
 !cfg/
 !cfg/**/*.wcfg
