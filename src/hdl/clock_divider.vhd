@@ -51,7 +51,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 
 entity clock_divider is
-	generic ( constant k_DIV : natural := 2	); -- How many clk cycles until slow clock toggles
+	generic ( constant k_DIV : natural := 2500	); -- How many clk cycles until slow clock toggles
 											   -- Effectively, you divide the clk double this 
 											   -- number (e.g., k_DIV := 2 --> clock divider of 4)
 	port ( 	i_clk    : in std_logic;
@@ -77,11 +77,11 @@ begin
 	--   rollover and toggle f_clk when count reaches k_DIV
 	countClock_proc : process(i_clk, i_reset)
 	begin
-		if i_reset = '1' then
-			f_count <= 0;
-			f_clk	<= '0';
-		else
-			if rising_edge(i_clk) then			
+        if rising_edge(i_clk) then
+            if i_reset = '1' then
+                f_count <= 0;
+                f_clk	<= '0';
+            else		
 				if f_count = k_DIV - 1 then
 					f_count <= 0;
 					f_clk <= not f_clk;

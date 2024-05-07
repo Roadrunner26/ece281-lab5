@@ -57,7 +57,7 @@ entity TDM4 is
 	generic ( constant k_WIDTH : natural  := 4); -- bits in input and output
     Port ( i_clk		: in  STD_LOGIC;
            i_reset		: in  STD_LOGIC; -- asynchronous
-           i_D3 		: in  STD_LOGIC_VECTOR (k_WIDTH - 1 downto 0);
+           i_D3 		: in  STD_LOGIC;
 		   i_D2 		: in  STD_LOGIC_VECTOR (k_WIDTH - 1 downto 0);
 		   i_D1 		: in  STD_LOGIC_VECTOR (k_WIDTH - 1 downto 0);
 		   i_D0 		: in  STD_LOGIC_VECTOR (k_WIDTH - 1 downto 0);
@@ -69,6 +69,7 @@ end TDM4;
 architecture behavioral of TDM4 is
 
 	signal   f_sel		 : unsigned(1 downto 0)	:= "00"; -- 2 bit counter output to select MUX input
+	signal w_sign : std_logic_vector(3 downto 0);
 	
 begin	
 	
@@ -87,11 +88,11 @@ begin
 	end process twoBitCounter_proc;
 	-----------------------------------------------------
 	
-
 	-- CONCURRENT STATEMENTS ----------------------------
-	
+	w_sign <= "1111" when (i_D3 = '1') else
+	           "0000";
 	-- output MUXs
-	o_DATA <= i_D3 when f_sel = "11" else
+	o_DATA <= w_sign when f_sel = "11" else
 			  i_D2 when f_sel = "10" else
 			  i_D1 when f_sel = "01" else
 			  i_D0;
