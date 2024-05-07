@@ -61,8 +61,10 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/src/hdl/ALU.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Desktop/ece281-lab5/src/hdl/ALU.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/src/hdl/ALU.vhd"/>
+          <Attr Name="ImportTime" Val="1715034883"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -79,8 +81,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/src/hdl/TDM4.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Desktop/ece281-lab5/src/hdl/TDM4.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/src/hdl/TDM4.vhd"/>
+          <Attr Name="ImportTime" Val="1715029494"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -97,8 +101,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/src/hdl/clock_divider.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Desktop/ece281-lab5/src/hdl/clock_divider.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/src/hdl/clock_divider.vhd"/>
+          <Attr Name="ImportTime" Val="1715045869"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -121,8 +127,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../ece281-lab2/src/hdl/sevenSegDecoder.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Desktop/ece281-lab2/src/hdl/sevenSegDecoder.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../ece281-lab2/src/hdl/sevenSegDecoder.vhd"/>
+          <Attr Name="ImportTime" Val="1715028797"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -133,14 +141,18 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/src/hdl/twoscomp_decimal.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Desktop/ece281-lab5/src/hdl/twoscomp_decimal.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/src/hdl/twoscomp_decimal.vhd"/>
+          <Attr Name="ImportTime" Val="1714433666"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/src/hdl/top_basys3.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Desktop/ece281-lab5/src/hdl/top_basys3.vhd">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/src/hdl/top_basys3.vhd"/>
+          <Attr Name="ImportTime" Val="1715048265"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -152,8 +164,10 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PPRDIR/src/hdl/Basys3_Master.xdc">
+      <File Path="$PSRCDIR/constrs_1/imports/hdl/Basys3_Master.xdc">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/src/hdl/Basys3_Master.xdc"/>
+          <Attr Name="ImportTime" Val="1715048927"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -164,16 +178,20 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/src/hdl/twoscomp_decimal_tb.vhd">
+      <File Path="$PSRCDIR/sim_1/imports/hdl/twoscomp_decimal_tb.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/src/hdl/twoscomp_decimal_tb.vhd"/>
+          <Attr Name="ImportTime" Val="1714433666"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/src/hdl/clock_divider_tb.vhd">
+      <File Path="$PSRCDIR/sim_1/imports/hdl/clock_divider_tb.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/src/hdl/clock_divider_tb.vhd"/>
+          <Attr Name="ImportTime" Val="1714433666"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
